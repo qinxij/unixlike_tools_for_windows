@@ -9,10 +9,12 @@ git:      http://code.google.com/p/msysgit/downloads/list?q=full+installer+offic
 Usage:
   1. Download git from the url and install it.
 
-  2. Then use commands: 
+  2. Then use command: 
 
        git clone https://github.com/qinxij/unixlike_tools_for_windows.git c:/tools
 
-       c:/tools/bootstrap_windows.ps1
-
   3. Add "C:\tools\" to environment varible `PATH`. Or use a .rc file powershell.
+
+  3. Run command to configure gvim [Set-Alias gvim "C:\Program Files (x86)\Vim\vim74\gvim.exe"]:
+
+       c:/tools/bootstrap_windows.ps1
