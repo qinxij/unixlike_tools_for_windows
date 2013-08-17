@@ -9,8 +9,10 @@ git:      http://code.google.com/p/msysgit/downloads/list?q=full+installer+offic
 Usage:
   1. Download git from the url and install it.
 
-  2. Then use command: 
+  2. Then use commands: 
 
        git clone https://github.com/qinxij/unixlike_tools_for_windows.git c:/tools
+
+       c:/tools/bootstrap_windows.ps1
 
   3. Add "C:\tools\" to environment varible `PATH`. Or use a .rc file powershell.

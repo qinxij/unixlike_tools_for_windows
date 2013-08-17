@@ -14,12 +14,12 @@ wget -O $HOME/.fonts/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/
 mkdir $HOME/.fonts.conf.d -Force
 wget -O $HOME/.fonts.conf.d/10-powerline-symbols.conf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf --no-check-certificate 
 
-echo "Installing plugins using Vundle..."
-
-echo "ivim has been installed. Just enjoy vimming!"
 
 ## link _vim and _vimrc in windows.
 ln --unroll --recursive $Home/.vim $HOME/_vim
 ln --symbolic $HOME/ivim/vimrc $HOME/_vimrc
 
-echo "Please run gvim and then run command :BundleUpdate in it."
+echo "Installing plugins using Vundle..."
+gvim +'set nospell' +BundleInstall! +BundleClean! +qa! $HOME/ivim/tools/info.txt
+
+echo "ivim has been installed. Just enjoy vimming!"
