@@ -1,4 +1,4 @@
-## Add "C:\tools\" to environment variable PATH
+## Unixlike tools for windows
 wget:     http://users.ugent.be/~bpuype/wget/
 curl:	  http://curl.haxx.se/gknw.net/7.32.0/dist-w32/curl-7.32.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip
 gvim:     http://lilydjwg.vim-cn.com/share/gvim74-x64.3.exe
