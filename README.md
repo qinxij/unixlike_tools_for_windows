@@ -4,6 +4,7 @@ curl:	  http://curl.haxx.se/gknw.net/7.32.0/dist-w32/curl-7.32.0-rtmp-ssh2-ssl-s
 gvim:     http://lilydjwg.vim-cn.com/share/gvim74-x64.3.exe
 ln:       http://schinagl.priv.at/nt/ln/ln.html#contact
 git:      http://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git
+console2: http://sourceforge.net/projects/console/
 
 
 Usage:
