@@ -23,3 +23,8 @@ Write-Host -ForegroundColor green "Installing plugins using Vundle..."
 gvim +'set nospell' +BundleInstall! +BundleClean! +qa! $HOME/ivim/tools/info.txt
 
 Write-Host -ForegroundColor green "ivim has been installed. Just enjoy vimming!"
+
+## configration for powerhsll:
+Copy-Item c:/tools/profile.ps1 $HOME/Documents/WindowsPowerShell/profile.ps1
+Copy-Item c:/tools/gitutils.ps1 $HOME/Documents/WindowsPowerShell/gitutils.ps1
+Copy-Item c:/tools/Microsoft.PowerShell_profile.ps1 $HOME/Documents/WindowsPoMicrosoft.PowerShell_profile.ps1

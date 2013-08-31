@@ -16,6 +16,7 @@ Usage:
 
   3. Add "C:\tools\" to environment varible `PATH`. Or use a .rc file powershell.
 
-  3. Run command to configure gvim [Set-Alias gvim "C:\Program Files (x86)\Vim\vim74\gvim.exe"]:
+  4. Run command to configure gvim [Set-Alias gvim "C:\Program Files (x86)\Vim\vim74\gvim.exe"]
+     and powershell:
 
        c:/tools/bootstrap_windows.ps1
