@@ -1,6 +1,8 @@
 $tools_path = $(Split-Path $MyInvocation.MyCommand.Path)
 $ps_path = $(Split-Path $PROFILE)
 
+$env:path += $tools_path
+
 # reg add ConEmu configration
 reg import $(Join-Path $tools_path "ConEmu_configuration.reg")
 
