@@ -1,15 +1,18 @@
 # this file was located in `$HOME/Documents/WindowsPowerShell/`.
-. (Resolve-Path $(split-Path $PROFILE) "profile.ps1")
+. (Join-Path $(split-Path $PROFILE) "profile.ps1")
 
 $env:path += ";c:\tools"
 set-alias ~ $home
 set-alias gvim 'c:\Program files\Vim\vim74\gvim'
 
+$ps_path = $(Split-Path $PROFILE)
 
+if ( !(Test-Path "$ps_path\Modules") ) {
+    mkdir "$ps_path\Modules"
+}
 ls $(Join-Path $(Split-Path $PROFILE) "Modules") | %{ ipmo $_.BaseName -Force }
 
-
-if (Test-Path $HOME/workspace) {
+if (!(Test-Path $HOME/workspace)) {
     mkdir $HOME/workspace -Force > $NULL
 }
 

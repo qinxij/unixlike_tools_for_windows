@@ -1,11 +1,27 @@
 $tools_path = $(Split-Path $MyInvocation.MyCommand.Path)
 $ps_path = $(Split-Path $PROFILE)
 
-$env:path += $tools_path
 
-# reg add ConEmu configration
+$env:path += ";$tools_path"
+
+## configration for powerhsll:
+
+Copy-Item $(Join-path -Path $tools_path -ChildPath "profile.ps1") `
+    $(Join-Path -Path $ps_path -ChildPath "profile.ps1")
+Copy-Item $(Join-path -Path $tools_path -ChildPath "gitutils.ps1") `
+    $(Join-Path -Path $ps_path -ChildPath "gitutils.ps1")
+Copy-Item $(Join-path -Path $tools_path -ChildPath "Microsoft.PowerShell_profile.ps1") `
+    $PROFILE
+
+. $PROFILE
+
+
+## reg add ConEmu configration
 reg import $(Join-Path $tools_path "ConEmu_configuration.reg")
 
+
+## Configuration for vim
+##
 Write-Host -ForegroundColor green "Download ivim ..."
 git clone https://github.com/kepbod/ivim.git $HOME/ivim
 
@@ -41,8 +57,8 @@ $utf8 = New-Object System.Text.UTF8Encoding $false
 # rm $(Join-Path -Path $tools_path -ChildPath "more_vimrc.vim.tmp")
 
 ## link _vim and _vimrc in windows.
-ln --symbolic $Home/.vim $HOME/_vim
-ln --symbolic $HOME/ivim/vimrc $HOME/_vimrc
+ln --symbolic $Home/.vim $HOME/_vim -f
+ln --symbolic $HOME/ivim/vimrc $HOME/_vimrc -f
 
 
 mkdir $HOME/.vim/bundle/VimIM/plugin/ -Force
@@ -56,10 +72,3 @@ gvim +'set nospell' +BundleInstall! +BundleClean! +qa! $HOME/ivim/tools/info.txt
 
 Write-Host -ForegroundColor green "ivim has been installed. Just enjoy vimming!"
 
-## configration for powerhsll:
-Copy-Item $(Join-path -Path $tools_path -ChildPath "profile.ps1") `
-    $(Join-Path -Path $ps_path -ChildPath "profile.ps1")
-Copy-Item $(Join-path -Path $tools_path -ChildPath "gitutils.ps1") `
-    $(Join-Path -Path $ps_path -ChildPath "gitutils.ps1")
-Copy-Item $(Join-path -Path $tools_path -ChildPath "Microsoft.PowerShell_profile.ps1") `
-    $PROFILE

@@ -2,7 +2,7 @@
 # Displays git branch and stats when inside a git repository.
 
 # See http://gist.github.com/180853 for gitutils.ps1.
-. (Resolve-Path $(split-Path $PROFILE) "gitutils.ps1")
+. (Join-Path $(split-Path $PROFILE) "gitutils.ps1")
 
 function prompt {
     $path = ""
